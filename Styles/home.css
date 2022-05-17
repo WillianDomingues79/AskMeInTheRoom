@@ -1,0 +1,40 @@
+.content {
+  display: grid;
+  grid-template-columns: 60% 40%; /*Porcentagem que sera dividido o conteudo na tela*/
+  grid-template-rows: 11.4rem 1fr; /* tamanho do primeiro item e depois fracionado em 1 para pegar toda a pagina*/
+
+  grid-template-areas:/*Defina onde ira ficar os itens na tela*/ 
+  'header header'
+  'left right';
+}
+
+header {
+  grid-area: header;/*Nome para identificar la no grid-templates-areas*/
+}
+
+#bg {
+  grid-area: left;
+  background: url('/Assets/home-bg-img.svg') no-repeat top/contain;
+}
+
+main {
+  grid-area: right;
+  display: flex;
+  align-items: center;
+}
+
+main .container {
+  width: min(36.3rem, 100%);/*Sempre vai dar preferencia para o valor menor 36.3rem*/
+}
+
+main h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-size: clamp(20px,5vw,2.8rem);
+  margin-bottom: 2.4rem;
+}
+
+input, button, .button {
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
