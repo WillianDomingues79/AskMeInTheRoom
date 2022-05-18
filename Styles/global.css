@@ -19,6 +19,7 @@ html {
   --grey-dark: #4D5E77;
   --grey-blue: #A1B2CD;
   --grey-light: #E5EAF1;
+  --gray-medium: #EAECF2;
 
   /*O padrão é 16px = 1.75rem, converte o padrão para 10px para ajudar na conta*/
   font-size: 62.5%;/*10px*/

@@ -8,6 +8,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="Styles/global.css" />
     <link rel="stylesheet" href="Styles/room.css" />
+    <link rel="stylesheet" href="Styles/modal.css">
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,7 +62,7 @@
           <div class="question-wrapper">
             <div class="question-content">
               <div class="user">
-                <img src="Assets/Avatar.svg" alt="Avatar" />
+                <img src="Assets/user.svg" alt="Avatar" />
               </div>
               <div class="question">
                 <p>Qual a diferença entre const, var e let no javaScript?</p>
@@ -73,8 +74,73 @@
               
           </div>
         </div>
+
+        <div class="question-wrapper">
+          <div class="question-content">
+            <div class="user">
+              <img src="Assets/user.svg" alt="Avatar" />
+            </div>
+            <div class="question">
+              <p>O que é javaScript?</p>
+            </div>
+          </div>
+          <div class="actions">
+            <a href="" class="check"><img src="Assets/check.svg" alt="Marcar como lida">Marcar como lida</a>
+            <a href="" class="delete"><img src="Assets/trash.svg" alt="Excluir">Excluir</a>
+            
+        </div>
+      </div>
+
+      <div class="question-wrapper">
+        <div class="question-content">
+          <div class="user">
+            <img src="Assets/user.svg" alt="Avatar" />
+          </div>
+          <div class="question">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, laborum. Fugiat soluta ea blanditiis iure incidunt quis, minima autem eligendi excepturi, quasi deserunt sint esse quibusdam, aliquam tempore ipsa commodi.</p>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="" class="check"><img src="Assets/check.svg" alt="Marcar como lida">Marcar como lida</a>
+          <a href="" class="delete"><img src="Assets/trash.svg" alt="Excluir">Excluir</a>
+          
+      </div>
+    </div>
+
+      <div class="question-wrapper read">
+        <div class="question-content">
+          <div class="user">
+            <img src="Assets/user.svg" alt="Avatar" />
+          </div>
+          <div class="question">
+            <p>O que é TypeScript?</p>
+          </div>
+        </div>
+        <div class="actions">
+          <a href="" class="check"><img src="Assets/check.svg" alt="Marcar como lida">Marcar como lida</a>
+          <a href="" class="delete"><img src="Assets/trash.svg" alt="Excluir">Excluir</a>
+          
+      </div>
+    </div>
       </section>
     </div>
+
+  <!-- MODAL -->
+  <div class="modal-wrapper">
+    <div class="modal">
+      <h2>Excluir pergunta</h2>
+      <p>Tem certeza que você deseja excluir esta pergunta</p>
+      <form action="#">
+        <label for="password" class="sr-only">Digite sua senha admin</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha">
+
+        <div class="buttons">
+          <div class="button">Cancelar</div>
+          <button>Sim, excluir</button>
+        </div>
+      </form>
+    </div>
+  </div>
   </head>
   <body></body>
 </html>
