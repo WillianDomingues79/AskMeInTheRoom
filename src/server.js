@@ -5,6 +5,8 @@ const server = express()
 
 server.set('view engine', 'ejs') //Seta uma view engine obrigatório
 
+server.use(express.static('public'))
+
 server.set('views', path.join(__dirname, 'views')) //Cria o caminho da view
 
 server.use(route)
