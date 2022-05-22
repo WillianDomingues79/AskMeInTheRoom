@@ -25,12 +25,13 @@ deleteButton.forEach(button => {
 function handleClick(event, check = true) {
   event.preventDefault() //Faz nao alterar a rota do link acima
   const text = check ? 'Marcar como lida' : 'Excluir'
-  const slug = check ? 'check' : 'delete'
 
-  const roomId = document.querySelector('#room-id').dataset.id
   //Pegando o formulario para a passagem da rota e informações do botão enviar
+  const slug = check ? 'check' : 'delete' //Pegando o Check
+  const roomId = document.querySelector('#room-id').dataset.id //Pegando o ID da sala
+  const questionId = event.target.dataset.id //Pegando o ID da questão
   const form = document.querySelector('.modal form')
-  form.setAttribute('action', `/room/${roomId}/:question/${slug}`) //Muda o caminho da classe action para este
+  form.setAttribute('action', `/question/${roomId}/${questionId}/${slug}`) //Muda o caminho da classe action para este
 
   modalTitle.innerHTML = `${text} esta pergunta`
   modalDescription.innerHTML = `Tem certeza que deseja ${text.toLocaleLowerCase()} esta pergunta`
