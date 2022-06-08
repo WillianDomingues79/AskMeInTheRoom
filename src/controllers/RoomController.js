@@ -4,13 +4,14 @@ module.exports = {
   async create(req, res) {
     const db = await Database()
     const pass = req.body.password
+
     let roomId
     let isRoom = true
     while (isRoom) {
       //Gera o numero da sala randomico
       for (var i = 0; i < 6; i++) {
         i == 0
-          ? (roomId = Math.floor(Math.random() * 10).toString())
+          ? (roomId = Math.floor(Math.random() * 10).toString()) //Quando é string ele não soma, ele vai concatenando
           : (roomId += Math.floor(Math.random() * 10).toString())
         //console.log(parseInt(roomId))
       }
@@ -60,9 +61,16 @@ module.exports = {
       isNoQuestions: isNoQuestions
     })
   },
-  enter(req, res) {
+  async enter(req, res) {
+    const db = await Database()
     const roomId = req.body.roomId
+    const pass = req.body.password
+    const verifyRoom = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`)
 
-    res.redirect(`/room/${roomId}`)
+    if (verifyRoom == pass) {
+      res.redirect(`/room/${roomId}`)
+    } else {
+      res.render('passincorrect', { roomId: roomId })
+    }
   }
 }

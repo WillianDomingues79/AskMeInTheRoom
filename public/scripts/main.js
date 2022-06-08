@@ -30,6 +30,8 @@ function handleClick(event, check = true) {
   const slug = check ? 'check' : 'delete' //Pegando o Check
   const roomId = document.querySelector('#room-id').dataset.id //Pegando o ID da sala
   const questionId = event.target.dataset.id //Pegando o ID da questão
+
+  //Mandar o caminho da rota pelo formulário
   const form = document.querySelector('.modal form')
   form.setAttribute('action', `/question/${roomId}/${questionId}/${slug}`) //Muda o caminho da classe action para este
 
